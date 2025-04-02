@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 30% 96%;
+    --foreground: 220 10% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 20%;
+
+    --primary: 191 75% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 259 35% 78%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 320 15% 80%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 191 75% 60%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 225 25% 97%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 191 75% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 259 35% 88%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 20% 12%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 25% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 25% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 191 70% 45%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 259 35% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 25% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 320 15% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 25% 25%;
+    --input: 217 25% 25%;
+    --ring: 191 70% 45%;
+    
+    --sidebar-background: 222 25% 15%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 191 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 259 35% 45%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 223 25% 25%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+}
+
+@layer components {
+  .transition-all-ease {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .mission-card {
+    @apply bg-card rounded-lg p-6 shadow-md transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .label-badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-sm font-medium transition-colors;
+  }
+  
+  .label-badge-lecture {
+    @apply bg-tdah-lavender text-indigo-700;
+  }
+  
+  .label-badge-mouvement {
+    @apply bg-tdah-mint text-emerald-700;
+  }
+  
+  .label-badge-focus {
+    @apply bg-tdah-skyblue text-blue-700;
+  }
+  
+  .label-badge-pause_mentale {
+    @apply bg-tdah-sand text-amber-700;
+  }
+  
+  .label-badge-default {
+    @apply bg-tdah-peach text-orange-700;
+  }
+
+  .stats-card {
+    @apply bg-white dark:bg-gray-800 rounded-lg p-4 shadow;
+  }
+  
+  .feedback-emoji {
+    @apply text-2xl cursor-pointer transition-transform hover:scale-125;
+  }
+}
